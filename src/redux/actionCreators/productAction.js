@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../actionTypes/actionTypes"
+import { ADD_TO_CART, REMOVE_FROM_CARD } from "../actionTypes/actionTypes"
 
 const addToCart = (product) => {
     return {
@@ -7,3 +7,10 @@ const addToCart = (product) => {
     }
 }
 export default addToCart;
+
+export const removeFromCart = (product) => {
+    return {
+        type: REMOVE_FROM_CARD,
+        payload: product
+    }
+}

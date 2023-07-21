@@ -1,7 +1,8 @@
 import React from "react";
 import { BiListPlus } from "react-icons/bi";
+import { AiOutlineDelete } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import addToCart from "../redux/actionCreators/productAction";
+import addToCart, { removeFromCart } from "../redux/actionCreators/productAction";
 import { ADD_TO_CART } from "../redux/actionTypes/actionTypes";
 
 const ProductCard = ({ product }) => {
@@ -29,6 +30,9 @@ const ProductCard = ({ product }) => {
       <div className='flex gap-2 mt-5'>
         <button onClick={() => dispatch(addToCart(product))} className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold'>
           Add to cart
+        </button>
+        <button onClick={() => dispatch(removeFromCart(product))} className='bg-indigo-500 rounded-full py-1 px-2 flex-1 text-white text-bold'>
+          <AiOutlineDelete />
         </button>
         <button
           title='Add to wishlist'
